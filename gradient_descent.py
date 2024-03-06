@@ -3,7 +3,7 @@ from sympy import *
 def gradient_descent(func: callable, x0: float, alpha: float = 0.01, epsilon: float = 0.0001):
     '''
     Performs Gradient Descent for a univariate function using a fixed step size alpha.
-    This function relys on computing the derivative of func using sympy.
+    This function relies on computing the derivative of func using sympy.
 
     Arguments:
         func (function) - function to minimize
