@@ -1,15 +1,16 @@
+from math import sqrt
 
-def golden_search(func, xl, xu, epsilon=0.0001):
+def golden_section(func: callable, xl: float, xu: float, epsilon: float = 0.0001):
     '''
     Golden Section Search algorithm to find local minimum of a univariate function.
+    Returns a float which is the minimizing value of x.
 
-    Arguemnts:
-        func - function to minimize
-        xl - lower bound of search area
-        xu - upper bound of search area
-        epsilon - algorithm stops when xu - xl is smaller than this number
+    Arguments:
+        func (function) - function to minimize
+        xl (float) - lower bound of search area
+        xu (float) - upper bound of search area
+        epsilon (float) - tolerance level. algorithm stops when xu - xl < epsilon
     '''
-    from math import sqrt
     assert xu > xl, 'Upper bound xu must be larger than lower bound xl'
 
     phi = (1 + sqrt(5)) / 2
@@ -19,7 +20,7 @@ def golden_search(func, xl, xu, epsilon=0.0001):
 
     fx1, fx2 = func(x1), func(x2)
 
-    while abs(xu-xl) >= epsilon:
+    while xu-xl >= epsilon:
         if fx1 < fx2:
             xu = x2
             x2 = x1
