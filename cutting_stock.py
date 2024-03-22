@@ -22,9 +22,9 @@ def cutting_stock(A: np.ndarray, b: np.ndarray, w: np.ndarray, W: float):
 
     Arguments:
         A (np.ndarray) - Matrix utilized in the Restricted Master Problem
-        b (np.ndarray) - 
-        w (np.ndarray) - list of indicies that correspond to which column vectors to keep
-        W (float) - 
+        b (np.ndarray) - Vector of constraints for RMP
+        w (np.ndarray) - width of desired cuts
+        W (float) - Total width
     
     Returns: tuple of (1,2,3)
         1. Optimal value the objective value
