@@ -2,10 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-X = np.loadtxt("clownImage.txt")
-
-U,S,Vh = np.linalg.svd(X)
-
+X = np.loadtxt("tech.txt")
 
 def low_rank_approx(A,k):
     U,S,Vh = np.linalg.svd(A)
@@ -19,10 +16,12 @@ def low_rank_approx(A,k):
     return low_rank
 
 
-ranks = [5,15,25]
+ranks = [5,15,25,50]
 for rank in ranks:
     plt.gray()
     plt.imshow(low_rank_approx(X,k=rank))
     plt.title(f'Rank {rank} Approximation')
-    plt.savefig(f'rank_{rank}.jpeg')
+    plt.savefig(f'images/rank_{rank}.jpeg')
     plt.show()
+
+
